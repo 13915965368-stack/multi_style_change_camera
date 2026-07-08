@@ -82,7 +82,7 @@ body::before {
 .eyebrow {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.42em;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ body::before {
   margin: 6px 0 4px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(22px, 3vw, 32px);
   line-height: 1.05;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -105,7 +105,7 @@ body::before {
 
 .subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--text-dim);
   letter-spacing: 0.04em;
@@ -123,11 +123,19 @@ body::before {
 }
 
 /* ---------- Stage ---------- */
+.main-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .stage {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  flex: 0 0 auto;
 }
 
 .camera-container {
@@ -386,7 +394,11 @@ body::before {
 
 /* ---------- Gallery ---------- */
 .gallery {
-  margin-top: 56px;
+  flex: 1;
+  min-width: 240px;
+  max-width: 360px;
+  position: sticky;
+  top: 20px;
 }
 
 .gallery-head {
@@ -416,9 +428,12 @@ body::before {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 12px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .gallery-grid img {
@@ -483,8 +498,19 @@ body::before {
   .camera-container {
     border-radius: var(--radius-lg);
   }
+  .main-layout {
+    flex-direction: column;
+  }
   .gallery {
+    max-width: 100%;
+    position: static;
     margin-top: 40px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    max-height: none;
+    overflow-y: visible;
   }
   .gallery-head {
     flex-direction: column;
