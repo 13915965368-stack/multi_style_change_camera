@@ -1,0 +1,13 @@
+# 开发测试文件
+stylize-test.html
+
+# 样式生成脚本和素材
+styles/
+
+# 开发文档
+docs/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
