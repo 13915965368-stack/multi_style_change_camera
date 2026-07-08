@@ -71,19 +71,18 @@ async function populateCameraSelect() {
 
 async function init() {
   try {
-    const selectedDeviceId = await populateCameraSelect();
-
-    if (selectedDeviceId) {
-      await camera.start(selectedDeviceId);
-    } else {
-      statusText.textContent = '未检测到可用摄像头，尝试默认摄像头...';
-      await camera.start();
-    }
+    // 先用默认摄像头启动，触发浏览器授权弹窗
+    // 授权后 enumerateDevices 才能拿到真实 deviceId 和 label
+    statusText.textContent = '请允许摄像头权限...';
+    await camera.start();
 
     await detector.init();
 
     const { width, height } = camera.getVideoSize();
     renderer.resize(width, height);
+
+    // 授权成功后填充摄像头下拉框
+    await populateCameraSelect();
 
     // 后台加载风格迁移模型（不阻塞主循环，加载完自动切换到 AI 风格化）
     statusText.textContent = '正在加载 AI 风格迁移模型...';
