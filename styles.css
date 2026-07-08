@@ -69,14 +69,14 @@ body::before {
   z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 20px;
 }
 
 /* ---------- Header ---------- */
 .app-header {
   text-align: center;
-  margin-bottom: 32px;
-  padding-top: 8px;
+  margin-bottom: 16px;
+  padding-top: 4px;
 }
 
 .eyebrow {
@@ -92,10 +92,10 @@ body::before {
 }
 
 .app-header h1 {
-  margin: 10px 0 8px;
+  margin: 6px 0 4px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(38px, 6vw, 64px);
+  font-size: clamp(28px, 4vw, 40px);
   line-height: 1.05;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -127,13 +127,13 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
 }
 
 .camera-container {
   position: relative;
   width: 100%;
-  max-width: 720px;
+  max-width: 540px;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -166,7 +166,7 @@ body::before {
 /* 画面框上方控制区：状态文字 + hint提示 + 摄像头选择器，纵向排列 */
 .camera-controls-top {
   width: 100%;
-  max-width: 720px;
+  max-width: 540px;
   margin-bottom: 12px;
   display: flex;
   flex-direction: column;
@@ -238,7 +238,7 @@ body::before {
   align-items: center;
   gap: 22px;
   width: 100%;
-  max-width: 720px;
+  max-width: 540px;
 }
 
 .picker-label {
